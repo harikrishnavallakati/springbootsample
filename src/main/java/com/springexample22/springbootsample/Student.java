@@ -6,12 +6,16 @@ import javax.persistence.Id;
 
 import org.hibernate.annotations.Entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @javax.persistence.Entity
 public class Student {
 	@Id
 	Long studentId;
 	String name;
+	@JsonFormat(pattern="dd/MM/yyyy")
 	Date fromDate;
+	@JsonFormat(pattern="dd/MM/yyyy")
 	Date toDate;
 	public Long getStudentId() {
 		return studentId;
