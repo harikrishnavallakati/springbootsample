@@ -8,4 +8,5 @@ public interface StudentService {
 	public boolean insertStudent(Student s);
 	public List<Student> getAllStudents();
 	public List<Student> getDate();
+	public long getDateDiff();
 }

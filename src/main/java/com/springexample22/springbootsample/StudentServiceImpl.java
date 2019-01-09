@@ -1,5 +1,8 @@
 package com.springexample22.springbootsample;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -38,5 +41,19 @@ public class StudentServiceImpl implements StudentService {
 		return list;
 	}
 
+	@Override
+	public long getDateDiff() {
+		
+		long daysbtwn;
+		Student s=new Student();
+		LocalDate FromDate = s.getFromDate();
+		LocalDate ToDate = s.getToDate();
+		LocalDate d1= FromDate;
+		LocalDate d2= ToDate;
+		// LocalDate d2 = s.getToDate();
+		daysbtwn = java.time.temporal.ChronoUnit.DAYS.between(d1,d2);
+		// daysbtwn = 20;
+		return daysbtwn;
+	}
 
 }

@@ -1,35 +1,35 @@
 package com.springexample22.springbootsample;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Id;
 
 import org.hibernate.annotations.Entity;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @javax.persistence.Entity
 public class Student {
 	@Id
 	Long studentId;
 	String name;
-	@JsonFormat(pattern="dd/MM/yyyy")
-	Date fromDate;
-	@JsonFormat(pattern="dd/MM/yyyy")
-	Date toDate;
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	LocalDate fromDate;
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	LocalDate toDate;
 	public Long getStudentId() {
 		return studentId;
 	}
-	public Date getFromDate() {
+	public LocalDate getFromDate() {
 		return fromDate;
 	}
-	public void setFromDate(Date fromDate) {
+	public void setFromDate(LocalDate fromDate) {
 		this.fromDate = fromDate;
 	}
-	public Date getToDate() {
+	public LocalDate getToDate() {
 		return toDate;
 	}
-	public void setToDate(Date toDate) {
+	public void setToDate(LocalDate toDate) {
 		this.toDate = toDate;
 	}
 	public void setStudentId(Long studentId) {
